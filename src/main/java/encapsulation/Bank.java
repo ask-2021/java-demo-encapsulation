@@ -2,38 +2,35 @@ package encapsulation;
 
 public class Bank {
 
-    int a;
-//
-//    public int getA() {
-//        return a;
-//    }
-//
-//    public void setA(int a) {
-//        this.a = a;
-//    }
-//
-//    public double getB() {
-//        return b;
-//    }
-//
-//    public void setB(double b) {
-//        this.b = b;
-//    }
-
-    double b;
-
+    public int getAccountNo() {
+        return accountNo;
+    }
 
     public int accountNo = 123456;
-    private int pinNo = 1234;
-    private double accountBalance = 1000000;
 
-    public void withdrawAmount (int accNo, int pin, int amount){
+    public void setPinNo(int pinNo) {
+        this.pinNo = pinNo;
+    }
+
+    private int pinNo = 1234;
+
+    public double getBalanceAmount() {
+        return balanceAmount;
+    }
+
+    public void setBalanceAmount(double balanceAmount) {
+        this.balanceAmount = balanceAmount;
+    }
+
+    private double balanceAmount = 1000000;
+
+    public void withdrawAmount (int accNo, int pin, double amount){
 
         if(accNo == accountNo && pin == pinNo){
-            if(amount<=accountBalance){
-               accountBalance = accountBalance - amount;
+            if(amount<=balanceAmount){
+                balanceAmount = balanceAmount - amount;
                 System.out.println("Amount withdrawal successful !!!");
-                System.out.println("Account balance: " +accountBalance);
+                System.out.println("Account balance: " +balanceAmount);
             } else{
                 System.out.println("Insufficient Balance !!!");
             }
@@ -52,5 +49,18 @@ public class Bank {
             System.out.println("Wrong Pin !!!");
         }
 
+    }
+
+    public double cashDeposit(int accNo , int pin , double amount){
+
+        if(accNo == accountNo && pin == pinNo){
+            balanceAmount = balanceAmount + amount;
+
+
+        } else{
+            System.out.println("Invalid Credentials !!!");
+
+        }
+        return balanceAmount;
     }
 }
