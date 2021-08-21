@@ -7,8 +7,13 @@ public class HSBC extends RBI {
         return 10.25;
     }
 
-    public HSBC getObject(){
-        HSBC obj = new HSBC();
+//    public HSBC getObject(){
+//        HSBC obj = new HSBC();
+//        return obj;
+//    }
+
+    public AMEX getObject(){
+        AMEX obj = new AMEX();
         return obj;
     }
 
