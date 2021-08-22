@@ -2,6 +2,7 @@ package overriding;
 
 public class FirefoxDriver extends WebDriver {
 
+    @Override
     public void click() {
         System.out.println("Performing Click - FireFox");
     }

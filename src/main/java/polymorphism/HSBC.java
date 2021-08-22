@@ -17,6 +17,12 @@ public class HSBC extends RBI {
         return obj;
     }
 
+
+//    public Object getObject(){
+//        AMEX obj = new AMEX();
+//        return "I am good";
+//    }
+
     public static void main(String[] args) {
         HSBC hsbc = new HSBC();
         System.out.println(hsbc.getHomeLoanROI());
